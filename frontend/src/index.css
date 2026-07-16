@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Kalam:wght@400;700&display=swap');
+
+@theme {
+  --color-page-bg: #FFFFFF;
+  --color-panel: #FFFFFF;
+  --color-ink: #201B16;
+  --color-grid-orange: #FF6B2C;
+
+  --color-chalk-coral: #E85D3A;
+  --color-chalk-gold: #D98A1F;
+  --color-chalk-lilac: #8B6FB8;
+  --color-chalk-sky: #2E6E8E;
+
+  --font-body: "Atkinson Hyperlegible", sans-serif;
+  --font-display: "Kalam", cursive;
+}
+
+body {
+  background-color: var(--color-page-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  position: relative;
+}
+
+.grid-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 107, 44, 0.35) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(255, 107, 44, 0.35) 1.5px, transparent 1.5px);
+  background-size: 48px 48px;
+  animation: gridMove 12s linear infinite;
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 48px 48px;
+  }
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+}
